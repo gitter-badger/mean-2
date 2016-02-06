@@ -308,7 +308,7 @@ describe('Configuration Tests:', function () {
         seed
           .start({ logResults: false })
           .then(function () {
-            // we don't ever expect to make it here but we don't want to timeout          
+            // we don't ever expect to make it here but we don't want to timeout
             User.remove(function(err) {
               should.not.exist(err);
               // force this test to fail since we should never be here
@@ -376,7 +376,7 @@ describe('Configuration Tests:', function () {
 
   describe('Testing Session Secret Configuration', function () {
     it('should warn if using default session secret when running in production', function (done) {
-      var conf = { sessionSecret: 'MEAN' };
+      var conf = { sessionSecret: 'SHACKAPP' };
       // set env to production for this test
       process.env.NODE_ENV = 'production';
       config.utils.validateSessionSecret(conf, true).should.equal(false);
@@ -395,7 +395,7 @@ describe('Configuration Tests:', function () {
     });
 
     it('should accept default session secret when running in development', function () {
-      var conf = { sessionSecret: 'MEAN' };
+      var conf = { sessionSecret: 'SHACKAPP' };
       // set env to development for this test
       process.env.NODE_ENV = 'development';
       config.utils.validateSessionSecret(conf, true).should.equal(true);
@@ -404,7 +404,7 @@ describe('Configuration Tests:', function () {
     });
 
     it('should accept default session secret when running in test', function () {
-      var conf = { sessionSecret: 'MEAN' };
+      var conf = { sessionSecret: 'SHACKAPP' };
       config.utils.validateSessionSecret(conf, true).should.equal(true);
     });
   });
@@ -461,7 +461,7 @@ describe('Configuration Tests:', function () {
     it('should use the default log format of "combined" when an invalid format was provided', function () {
       // manually set the config log format to be invalid
       config.log = {
-        format: '_some_invalid_format_'        
+        format: '_some_invalid_format_'
       };
 
       var format = logger.getFormat();
@@ -568,7 +568,7 @@ describe('Configuration Tests:', function () {
       var _dir = process.cwd() + '/temp-rotating-logs';
       var _filename = 'unit-test-rotating-access-%DATE%.log';
 
-      // enable rotating logs      
+      // enable rotating logs
       config.log = {
         format: 'combined',
         options: {

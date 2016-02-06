@@ -4,7 +4,7 @@ describe('Users E2E Tests:', function () {
   var user1 = {
     firstName: 'test',
     lastName: 'user',
-    email: 'test.user@meanjs.com',
+    email: 'test.user@shackapp.org',
     username: 'testUser',
     password: 'P@$$w0rd!!'
   };
@@ -12,7 +12,7 @@ describe('Users E2E Tests:', function () {
   var user2 = {
     firstName: 'test',
     lastName: 'user2',
-    email: 'test.user2@meanjs.com',
+    email: 'test.user2@shackapp.org',
     username: 'testUser2',
     password: 'P@$$w0rd!!'
   };
